@@ -53,15 +53,15 @@ jobs:
         uses: azure/login@v1
         with:
           enable-AzPSSession: true
-          client-id: 1368025
-          tenant-id: 802b8ef7-8a05-413c-abae-1e0452c1393d
-          subscription-id: 0b3dee12-6958-4ea4-978f-1995d0338119
+          client-id: ${{ secrets.CLIENT_ID }}
+          tenant-id: ${{ secrets.TENANT_ID }}
+          subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
           auth-type: IDENTITY
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'TestAppContactDatabaseApp'
+          app-name: 'rzulta'
           slot-name: 'production'
           package: .
