@@ -18,6 +18,13 @@ namespace CRUD_application_2
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "User", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Search",
+                url: "{controller}/{action}/{searchString}",
+                defaults: new { controller = "User", action = "Search", searchString = UrlParameter.Optional }
+            );
+
         }
     }
 }
